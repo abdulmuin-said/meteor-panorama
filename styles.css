@@ -195,9 +195,13 @@ h1, h2, h3, h4 { font-family: var(--font-head); color: var(--ink); line-height: 
 .footer-logo { height: 64px; width: auto; padding: 8px 12px; background: #fff; border-radius: var(--radius); margin-bottom: 18px; }
 .footer-brand p { max-width: 34ch; margin-bottom: 22px; }
 .social { display: flex; gap: 10px; }
-.social-link { display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 50%; border: 1px solid rgba(255,255,255,.22); color: #fff; transition: background .2s, border-color .2s, transform .2s; }
-.social-link .ic, .social-link .ic-wa { width: 19px; height: 19px; }
-a.social-link:hover { background: var(--wa); border-color: var(--wa); transform: translateY(-2px); }
+.social-link { display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 50%; color: #fff; transition: transform .2s, box-shadow .2s, filter .2s; }
+.social-link .brand-ic { width: 22px; height: 22px; fill: currentColor; }
+.social-ig { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
+.social-fb { background: #fff; color: #1877F2; }
+.social-fb .brand-ic { width: 42px; height: 42px; }
+.social-wa { background: #25D366; }
+a.social-link:hover, .social-link:hover { transform: translateY(-3px); box-shadow: 0 8px 18px -6px rgba(0,0,0,.5); }
 .footer-col { display: flex; flex-direction: column; gap: 10px; }
 .footer-col h4 { color: #fff; font-size: 0.95rem; letter-spacing: .02em; margin-bottom: 6px; }
 .footer a:hover { color: #fff; }
@@ -207,9 +211,9 @@ a.social-link:hover { background: var(--wa); border-color: var(--wa); transform:
 .to-top { color: #c5d0d7; }
 
 /* WhatsApp float */
-.wa-float { position: fixed; right: 22px; bottom: 22px; z-index: 60; width: 58px; height: 58px; border-radius: 50%; background: var(--wa); color: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 22px rgba(31,174,85,.45); transition: transform .2s, background .2s; }
-.wa-float svg { width: 30px; height: 30px; fill: currentColor; }
-.wa-float:hover { background: var(--wa-dark); transform: scale(1.06); }
+.wa-float { position: fixed; right: 22px; bottom: 22px; z-index: 60; width: 58px; height: 58px; border-radius: 50%; background: #25D366; color: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 22px rgba(37,211,102,.45); transition: transform .2s, background .2s; }
+.wa-float svg { width: 32px; height: 32px; fill: currentColor; }
+.wa-float:hover { background: #1ebe5a; transform: scale(1.06); }
 
 /* Modal */
 .modal-backdrop { position: fixed; inset: 0; z-index: 100; background: rgba(20, 26, 31, .6); display: flex; align-items: center; justify-content: center; padding: 20px; opacity: 0; visibility: hidden; transition: opacity .2s, visibility .2s; }
