@@ -12,14 +12,20 @@ document.addEventListener('DOMContentLoaded', () => {
   // ---------------------------------------------------
   const t = {
     tr: {
-      nav_products: 'Ürünler', nav_calculator: 'Fiyat Hesapla', nav_production: 'Üretim', nav_contact: 'İletişim',
-      hero_place: 'Kayseri · Mimarsinan OSB',
-      hero_title: 'Cam balkon, giyotin cam ve kış bahçesi sistemleri',
-      hero_lead: "Kayseri'deki tesisimizde her projeyi ölçüye özel üretiyor, Türkiye ve Avrupa'ya teslim ediyoruz.",
+      meta_title: 'Meteor Panorama | Cam Balkon, Giyotin Cam ve Kış Bahçesi',
+      meta_desc: "Meteor Panorama; ısıcamlı cam balkon, giyotin cam, kış bahçesi ve alüminyum sürme sistemlerini ölçüye özel üretir. Ölçüden montaja tek ekip.",
+      topbar_hours: 'Pzt – Cmt, 08:30 – 18:30',
+      nav_products: 'Ürünler', nav_calculator: 'Fiyat Hesapla', nav_production: 'Üretim', nav_contact: 'İletişim', nav_cta: 'Teklif Al',
+      hero_place: 'Cam balkon · Giyotin cam · Kış bahçesi',
+      hero_title: 'Balkonunuzu dört mevsim yaşam alanına çevirin',
+      hero_lead: 'Ölçüye özel üretim, yerinde keşif ve profesyonel montaj. Türkiye ve Avrupa’ya teslim ediyoruz.',
       hero_cta_calc: 'Fiyat hesapla', hero_cta_wa: "WhatsApp'tan yazın",
-      hero_p1: 'Ölçüye özel üretim', hero_p2: 'Yerinde keşif ve ölçü', hero_p3: 'Türkçe · Deutsch · English',
+      hero_p1: 'Ölçüye özel üretim', hero_p2: 'Ücretsiz keşif ve ölçü', hero_p3: 'Profesyonel montaj',
+      stat1_label: 'Yıllık deneyim', stat2_label: 'Tamamlanan proje', stat3_label: 'Dil desteği',
+      hero_card_title: 'Ücretsiz keşif', hero_card_text: "Yerinde ölçü için WhatsApp'tan randevu alın.",
       prod_title: 'Ürünler',
       prod_desc: 'Balkon, teras ve işletmeler için dört ana sistem. Hepsi ölçünüze göre üretilir.',
+      badge_popular: 'En çok tercih edilen',
       p1_title: 'Isıcamlı Cam Balkon', p1_desc: 'Çift camlı katlanır sistem. Balkonu kışın da kullanılabilir bir odaya dönüştürür.',
       p2_title: 'Motorlu Giyotin Cam', p2_desc: 'Kumandayla dikey açılan cam paneller. Açıkken korkuluk, kapalıyken tam cephe olur.',
       p3_title: 'Kış Bahçesi', p3_desc: 'Alüminyum taşıyıcı ve cam çatıyla bahçe ya da terasta dört mevsim kullanılan alan.',
@@ -33,30 +39,40 @@ document.addEventListener('DOMContentLoaded', () => {
       label_glass_type: 'Cam', label_profile_color: 'Profil rengi',
       opt_glass_clear: 'Şeffaf çift cam', opt_glass_fume: 'Füme', opt_glass_bronze: 'Bronz', opt_glass_reflect: 'Reflekte',
       opt_color_anthracite: 'Antrasit (RAL 7016)', opt_color_black: 'Siyah (RAL 9005)', opt_color_white: 'Beyaz (RAL 9016)', opt_color_eloxal: 'Eloksal', opt_color_wood: 'Ahşap desen',
-      res_est_title: 'Tahmini fiyat aralığı',
+      res_est_title: 'Tahmini fiyat aralığı', res_product: 'Ürün',
+      res_f1: 'Ücretsiz keşif ve ölçü', res_f2: 'Ölçünüze özel net teklif',
       btn_whatsapp_quote: "Bu ölçülerle WhatsApp'tan teklif iste",
       res_disclaimer: 'Bu tutar bilgi amaçlıdır. Kesin fiyat, yerinde ölçü alındıktan sonra verilir.',
-      prod2_title: "Üretim Kayseri'de",
-      prod2_p1: "Profil kesiminden cam montajına kadar tüm işlemler Kayseri Mimarsinan Organize Sanayi Bölgesi'ndeki tesisimizde yapılır. Siparişler Türkiye'nin yanı sıra Almanya ve diğer Avrupa ülkelerine de gönderilir.",
-      prod2_p2: "Almanya'daki iş ortağımız sayesinde Avrupa'daki müşterilerimizle Almanca iletişim kurabiliyoruz.",
+      prod2_title: 'Ölçüden montaja, tek ekip',
+      prod2_p1: 'Keşif, ölçü, üretim ve montaj aynı ekip tarafından yürütülür. Aracı yoktur; süreç, termin ve kalite baştan sona bizim kontrolümüzdedir.',
+      prod2_p2: 'Türkiye’nin her yerine ve Avrupa’ya teslimat yapıyoruz. Türkçe, Almanca ve İngilizce destek veriyoruz.',
       s1_title: 'Keşif ve ölçü', s1_desc: 'Alanı yerinde ölçer, size uygun sistemi birlikte belirleriz.',
-      s2_title: 'Üretim', s2_desc: 'Onaylanan ölçülere göre sistem tesisimizde üretilir.',
-      s3_title: 'Teslim ve montaj', s3_desc: 'Ürün korumalı ambalajla gönderilir ve montajı yapılır.',
+      s2_title: 'Proje ve teklif', s2_desc: 'Ölçü, cam ve renk seçimlerinizle net bir teklif hazırlarız.',
+      s3_title: 'Üretim', s3_desc: 'Onaylanan ölçülere göre sistem tesisimizde üretilir.',
+      s4_title: 'Teslim ve montaj', s4_desc: 'Ürün korumalı ambalajla gönderilir ve montajı yapılır.',
       contact_title: 'İletişim', contact_addr_title: 'Adres', contact_phone_title: 'Telefon / WhatsApp',
       contact_email_title: 'E-posta', contact_hours_title: 'Çalışma saatleri', contact_hours_val: 'Pazartesi – Cumartesi, 08:30 – 18:30',
       form_title: 'Bize yazın', form_label_name: 'Ad soyad', form_label_phone: 'Telefon', form_label_country: 'Şehir / ülke',
       form_label_interest: 'İlgilendiğiniz ürün', form_opt_other: 'Diğer', form_label_msg: 'Mesajınız', form_btn_send: 'WhatsApp ile gönder',
+      foot_about: 'Cam balkon, giyotin cam, kış bahçesi ve sürme sistemlerinde ölçüden montaja tek ekip.',
+      foot_links: 'Bağlantılar', foot_follow: 'Bizi takip edin', foot_rights: 'Tüm hakları saklıdır.', foot_top: 'Yukarı çık',
       area: 'm²', specs_title: 'Teknik bilgiler', modal_calc: 'Bu ürün için fiyat hesapla', modal_wa: "WhatsApp'tan bilgi al"
     },
     de: {
-      nav_products: 'Produkte', nav_calculator: 'Preisrechner', nav_production: 'Fertigung', nav_contact: 'Kontakt',
-      hero_place: 'Kayseri · Industriegebiet Mimarsinan',
-      hero_title: 'Balkonverglasung, Guillotine-Glas und Wintergärten',
-      hero_lead: 'Wir fertigen jedes Projekt nach Maß in unserem Werk in Kayseri und liefern in die Türkei und nach Europa.',
+      meta_title: 'Meteor Panorama | Balkonverglasung, Guillotine-Glas und Wintergärten',
+      meta_desc: 'Meteor Panorama fertigt Balkonverglasungen, Guillotine-Glas, Wintergärten und Aluminium-Schiebesysteme nach Maß. Von der Aufnahme bis zur Montage aus einer Hand.',
+      topbar_hours: 'Mo – Sa, 08:30 – 18:30 (TR)',
+      nav_products: 'Produkte', nav_calculator: 'Preisrechner', nav_production: 'Fertigung', nav_contact: 'Kontakt', nav_cta: 'Angebot anfordern',
+      hero_place: 'Balkonverglasung · Guillotine-Glas · Wintergarten',
+      hero_title: 'Machen Sie Ihren Balkon zum Wohnraum für alle vier Jahreszeiten',
+      hero_lead: 'Fertigung nach Maß, Aufmaß vor Ort und fachgerechte Montage. Lieferung in die Türkei und nach Europa.',
       hero_cta_calc: 'Preis berechnen', hero_cta_wa: 'Per WhatsApp schreiben',
-      hero_p1: 'Fertigung nach Maß', hero_p2: 'Aufmaß vor Ort', hero_p3: 'Türkçe · Deutsch · English',
+      hero_p1: 'Fertigung nach Maß', hero_p2: 'Kostenloses Aufmaß', hero_p3: 'Fachgerechte Montage',
+      stat1_label: 'Jahre Erfahrung', stat2_label: 'Realisierte Projekte', stat3_label: 'Sprachen',
+      hero_card_title: 'Kostenloses Aufmaß', hero_card_text: 'Vereinbaren Sie per WhatsApp einen Termin vor Ort.',
       prod_title: 'Produkte',
       prod_desc: 'Vier Systeme für Balkon, Terrasse und Gewerbe – jeweils nach Ihren Maßen gefertigt.',
+      badge_popular: 'Besonders beliebt',
       p1_title: 'Isolierte Balkonverglasung', p1_desc: 'Faltsystem mit Doppelverglasung. Macht den Balkon auch im Winter nutzbar.',
       p2_title: 'Elektrisches Guillotine-Glas', p2_desc: 'Vertikal fahrende Glaselemente per Fernbedienung. Offen eine Brüstung, geschlossen eine Glasfront.',
       p3_title: 'Wintergarten', p3_desc: 'Aluminiumkonstruktion mit Glasdach – ganzjährig nutzbarer Raum im Garten oder auf der Terrasse.',
@@ -70,30 +86,40 @@ document.addEventListener('DOMContentLoaded', () => {
       label_glass_type: 'Glas', label_profile_color: 'Profilfarbe',
       opt_glass_clear: 'Klares Isolierglas', opt_glass_fume: 'Grau getönt', opt_glass_bronze: 'Bronze', opt_glass_reflect: 'Reflektierend',
       opt_color_anthracite: 'Anthrazit (RAL 7016)', opt_color_black: 'Schwarz (RAL 9005)', opt_color_white: 'Weiß (RAL 9016)', opt_color_eloxal: 'Eloxiert', opt_color_wood: 'Holzdekor',
-      res_est_title: 'Geschätzte Preisspanne',
+      res_est_title: 'Geschätzte Preisspanne', res_product: 'Produkt',
+      res_f1: 'Kostenloses Aufmaß vor Ort', res_f2: 'Verbindliches Angebot nach Maß',
       btn_whatsapp_quote: 'Angebot per WhatsApp anfragen',
       res_disclaimer: 'Unverbindlicher Richtwert. Der genaue Preis folgt nach dem Aufmaß vor Ort.',
-      prod2_title: 'Gefertigt in Kayseri',
-      prod2_p1: 'Vom Profilzuschnitt bis zur Glasmontage erfolgen alle Arbeitsschritte in unserem Werk im Industriegebiet Mimarsinan in Kayseri. Wir liefern in die Türkei, nach Deutschland und in weitere europäische Länder.',
-      prod2_p2: 'Über unseren Partner in Deutschland betreuen wir Kunden in Europa auch auf Deutsch.',
+      prod2_title: 'Vom Aufmaß bis zur Montage – ein Team',
+      prod2_p1: 'Aufmaß, Fertigung und Montage liegen in einer Hand. Keine Zwischenhändler – Ablauf, Termine und Qualität behalten wir von Anfang bis Ende selbst im Griff.',
+      prod2_p2: 'Wir liefern in die ganze Türkei und nach Europa. Support auf Türkisch, Deutsch und Englisch.',
       s1_title: 'Beratung und Aufmaß', s1_desc: 'Wir messen vor Ort und wählen mit Ihnen das passende System.',
-      s2_title: 'Fertigung', s2_desc: 'Das System wird nach den freigegebenen Maßen in unserem Werk gefertigt.',
-      s3_title: 'Lieferung und Montage', s3_desc: 'Sicher verpackt geliefert und fachgerecht montiert.',
+      s2_title: 'Planung und Angebot', s2_desc: 'Mit Ihren Maß-, Glas- und Farbwünschen erstellen wir ein klares Angebot.',
+      s3_title: 'Fertigung', s3_desc: 'Das System wird nach den freigegebenen Maßen in unserem Werk gefertigt.',
+      s4_title: 'Lieferung und Montage', s4_desc: 'Sicher verpackt geliefert und fachgerecht montiert.',
       contact_title: 'Kontakt', contact_addr_title: 'Adresse', contact_phone_title: 'Telefon / WhatsApp',
       contact_email_title: 'E-Mail', contact_hours_title: 'Öffnungszeiten', contact_hours_val: 'Montag – Samstag, 08:30 – 18:30 (TR)',
       form_title: 'Schreiben Sie uns', form_label_name: 'Name', form_label_phone: 'Telefon', form_label_country: 'Stadt / Land',
       form_label_interest: 'Produkt', form_opt_other: 'Sonstiges', form_label_msg: 'Nachricht', form_btn_send: 'Per WhatsApp senden',
+      foot_about: 'Balkonverglasung, Guillotine-Glas, Wintergärten und Schiebesysteme – vom Aufmaß bis zur Montage aus einer Hand.',
+      foot_links: 'Links', foot_follow: 'Folgen Sie uns', foot_rights: 'Alle Rechte vorbehalten.', foot_top: 'Nach oben',
       area: 'm²', specs_title: 'Technische Daten', modal_calc: 'Preis für dieses Produkt berechnen', modal_wa: 'Per WhatsApp anfragen'
     },
     en: {
-      nav_products: 'Products', nav_calculator: 'Price Calculator', nav_production: 'Production', nav_contact: 'Contact',
-      hero_place: 'Kayseri · Mimarsinan Industrial Zone',
-      hero_title: 'Balcony glazing, guillotine glass and winter gardens',
-      hero_lead: 'We manufacture every project to measure at our plant in Kayseri and deliver across Turkey and Europe.',
+      meta_title: 'Meteor Panorama | Balcony Glazing, Guillotine Glass and Winter Gardens',
+      meta_desc: 'Meteor Panorama builds insulated balcony glazing, guillotine glass, winter gardens and aluminium sliding systems to measure. One team from survey to installation.',
+      topbar_hours: 'Mon – Sat, 08:30 – 18:30 (TR)',
+      nav_products: 'Products', nav_calculator: 'Price Calculator', nav_production: 'Production', nav_contact: 'Contact', nav_cta: 'Get a Quote',
+      hero_place: 'Balcony glazing · Guillotine glass · Winter garden',
+      hero_title: 'Turn your balcony into a four-season living space',
+      hero_lead: 'Made-to-measure production, on-site survey and professional installation. We deliver across Turkey and Europe.',
       hero_cta_calc: 'Calculate price', hero_cta_wa: 'Message on WhatsApp',
-      hero_p1: 'Made to measure', hero_p2: 'On-site survey', hero_p3: 'Türkçe · Deutsch · English',
+      hero_p1: 'Made to measure', hero_p2: 'Free on-site survey', hero_p3: 'Professional installation',
+      stat1_label: 'Years of experience', stat2_label: 'Projects completed', stat3_label: 'Languages',
+      hero_card_title: 'Free site survey', hero_card_text: 'Book an on-site measurement on WhatsApp.',
       prod_title: 'Products',
       prod_desc: 'Four systems for balconies, terraces and businesses – each built to your dimensions.',
+      badge_popular: 'Most popular',
       p1_title: 'Insulated Balcony Glazing', p1_desc: 'Double-glazed folding system that makes your balcony usable in winter too.',
       p2_title: 'Motorized Guillotine Glass', p2_desc: 'Remote-controlled vertical glass panels. A balustrade when open, a full glass front when closed.',
       p3_title: 'Winter Garden', p3_desc: 'Aluminium frame with glass roof – a year-round room in your garden or on your terrace.',
@@ -107,27 +133,36 @@ document.addEventListener('DOMContentLoaded', () => {
       label_glass_type: 'Glass', label_profile_color: 'Frame colour',
       opt_glass_clear: 'Clear double glazing', opt_glass_fume: 'Grey tint', opt_glass_bronze: 'Bronze', opt_glass_reflect: 'Reflective',
       opt_color_anthracite: 'Anthracite (RAL 7016)', opt_color_black: 'Black (RAL 9005)', opt_color_white: 'White (RAL 9016)', opt_color_eloxal: 'Anodised', opt_color_wood: 'Wood finish',
-      res_est_title: 'Estimated price range',
+      res_est_title: 'Estimated price range', res_product: 'Product',
+      res_f1: 'Free on-site survey', res_f2: 'Tailored, fixed quote',
       btn_whatsapp_quote: 'Request a quote on WhatsApp',
       res_disclaimer: 'For guidance only. The final price is confirmed after an on-site survey.',
-      prod2_title: 'Made in Kayseri',
-      prod2_p1: 'From profile cutting to glass fitting, all work is done at our plant in the Mimarsinan Organised Industrial Zone in Kayseri. We deliver within Turkey, to Germany and to other European countries.',
-      prod2_p2: 'Through our partner in Germany we can also support European customers in German.',
+      prod2_title: 'From survey to installation, one team',
+      prod2_p1: 'Survey, measuring, production and installation are handled by the same team. No middlemen – process, lead time and quality stay under our control from start to finish.',
+      prod2_p2: 'We deliver across Turkey and to Europe, with support in Turkish, German and English.',
       s1_title: 'Survey and measuring', s1_desc: 'We measure on site and choose the right system with you.',
-      s2_title: 'Production', s2_desc: 'The system is built at our plant to the approved dimensions.',
-      s3_title: 'Delivery and installation', s3_desc: 'Shipped in protective packaging and installed.',
+      s2_title: 'Design and quote', s2_desc: 'We prepare a clear quote based on your size, glass and colour choices.',
+      s3_title: 'Production', s3_desc: 'The system is built at our plant to the approved dimensions.',
+      s4_title: 'Delivery and installation', s4_desc: 'Shipped in protective packaging and installed.',
       contact_title: 'Contact', contact_addr_title: 'Address', contact_phone_title: 'Phone / WhatsApp',
       contact_email_title: 'Email', contact_hours_title: 'Opening hours', contact_hours_val: 'Monday – Saturday, 08:30 – 18:30 (TR)',
       form_title: 'Write to us', form_label_name: 'Full name', form_label_phone: 'Phone', form_label_country: 'City / country',
       form_label_interest: 'Product', form_opt_other: 'Other', form_label_msg: 'Message', form_btn_send: 'Send via WhatsApp',
+      foot_about: 'Balcony glazing, guillotine glass, winter gardens and sliding systems – one team from survey to installation.',
+      foot_links: 'Links', foot_follow: 'Follow us', foot_rights: 'All rights reserved.', foot_top: 'Back to top',
       area: 'm²', specs_title: 'Specifications', modal_calc: 'Calculate price for this product', modal_wa: 'Ask on WhatsApp'
     }
   };
 
-  const startingPrices = {
-    tr: { isicam: '4.500 ₺', giyotin: '8.500 ₺', kisbahcesi: '14.000 ₺', surme: '5.000 ₺' },
-    eu: { isicam: '190 €', giyotin: '380 €', kisbahcesi: '620 €', surme: '220 €' }
+  // Single source of truth: price ranges per m² (also used for the "from" prices on the cards)
+  const rates = {
+    isicamli:   { tr: [3400, 4400],   eu: [140, 190] },
+    giyotin:    { tr: [6400, 8600],   eu: [280, 380] },
+    kisbahcesi: { tr: [10500, 14200], eu: [460, 610] },
+    surme:      { tr: [3800, 5100],   eu: [160, 215] }
   };
+  const priceCodeToProduct = { isicam: 'isicamli', giyotin: 'giyotin', kisbahcesi: 'kisbahcesi', surme: 'surme' };
+
 
   let lang = 'tr';
   const tr = (key) => (t[lang] && t[lang][key]) || t.tr[key] || key;
@@ -141,10 +176,13 @@ document.addEventListener('DOMContentLoaded', () => {
       const v = t[next][el.dataset.i18n];
       if (v) el.textContent = v;
     });
-    const prices = next === 'tr' ? startingPrices.tr : startingPrices.eu;
     document.querySelectorAll('[data-price-code]').forEach(el => {
-      el.textContent = prices[el.dataset.priceCode] || el.textContent;
+      const r = rates[priceCodeToProduct[el.dataset.priceCode]];
+      if (r) el.textContent = money(r[lang === 'tr' ? 'tr' : 'eu'][0]);
     });
+    document.title = t[next].meta_title;
+    const md = document.querySelector('meta[name="description"]');
+    if (md) md.setAttribute('content', t[next].meta_desc);
     calculatePrice();
   }
 
@@ -158,12 +196,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // ---------------------------------------------------
   // Calculator
   // ---------------------------------------------------
-  const rates = {
-    isicamli:   { tr: [4500, 5800],   eu: [190, 250] },
-    giyotin:    { tr: [8500, 11500],  eu: [380, 500] },
-    kisbahcesi: { tr: [14000, 19000], eu: [620, 820] },
-    surme:      { tr: [5000, 6800],   eu: [220, 290] }
-  };
   const productKey = { isicamli: 'p1_title', giyotin: 'p2_title', kisbahcesi: 'p3_title', surme: 'p4_title' };
   const shapeMod = { 'duz': 1, 'l-tipi': 1.08, 'u-tipi': 1.15 };
   const shapeKey = { 'duz': 'shape_flat', 'l-tipi': 'shape_l', 'u-tipi': 'shape_u' };
@@ -183,6 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
       range.value = Math.min(rangeMax, state[key]);
       calculatePrice();
     });
+    input.addEventListener('change', () => { input.value = state[key]; });
     range.addEventListener('input', () => {
       state[key] = parseFloat(range.value);
       input.value = state[key];
@@ -222,6 +255,7 @@ document.addEventListener('DOMContentLoaded', () => {
     $('#resPriceDisplay').textContent = `${money(min)} – ${money(max)}`;
     $('#resDimensions').textContent = `${w.toFixed(1)} × ${h.toFixed(1)} m`;
     $('#resTotalArea').textContent = `${area.toFixed(2)} m²`;
+    $('#resProduct').textContent = tr(productKey[state.product]);
 
     const glassTxt = glassSel.options[glassSel.selectedIndex].text;
     const colorTxt = colorSel.options[colorSel.selectedIndex].text;
