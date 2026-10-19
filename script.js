@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
       form_title: 'Bize yazın', form_label_name: 'Ad soyad', form_label_phone: 'Telefon', form_label_country: 'Şehir / ülke',
       form_label_interest: 'İlgilendiğiniz ürün', form_opt_other: 'Diğer', form_label_msg: 'Mesajınız', form_btn_send: 'WhatsApp ile gönder',
       foot_about: 'Cam balkon, giyotin cam, kış bahçesi ve sürme sistemlerinde ölçüden montaja tek ekip.',
-      foot_links: 'Bağlantılar', foot_follow: 'Bizi takip edin', foot_rights: 'Tüm hakları saklıdır.', foot_top: 'Yukarı çık',
+      foot_links: 'Bağlantılar', foot_follow: 'Bizi takip edin', foot_rights: 'Tüm hakları saklıdır.', foot_top: 'Yukarı çık', country: 'Türkiye',
       area: 'm²', specs_title: 'Teknik bilgiler', modal_calc: 'Bu ürün için fiyat hesapla', modal_wa: "WhatsApp'tan bilgi al"
     },
     de: {
@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
       form_title: 'Schreiben Sie uns', form_label_name: 'Name', form_label_phone: 'Telefon', form_label_country: 'Stadt / Land',
       form_label_interest: 'Produkt', form_opt_other: 'Sonstiges', form_label_msg: 'Nachricht', form_btn_send: 'Per WhatsApp senden',
       foot_about: 'Balkonverglasung, Guillotine-Glas, Wintergärten und Schiebesysteme – vom Aufmaß bis zur Montage aus einer Hand.',
-      foot_links: 'Links', foot_follow: 'Folgen Sie uns', foot_rights: 'Alle Rechte vorbehalten.', foot_top: 'Nach oben',
+      foot_links: 'Links', foot_follow: 'Folgen Sie uns', foot_rights: 'Alle Rechte vorbehalten.', foot_top: 'Nach oben', country: 'Türkei',
       area: 'm²', specs_title: 'Technische Daten', modal_calc: 'Preis für dieses Produkt berechnen', modal_wa: 'Per WhatsApp anfragen'
     },
     en: {
@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
       form_title: 'Write to us', form_label_name: 'Full name', form_label_phone: 'Phone', form_label_country: 'City / country',
       form_label_interest: 'Product', form_opt_other: 'Other', form_label_msg: 'Message', form_btn_send: 'Send via WhatsApp',
       foot_about: 'Balcony glazing, guillotine glass, winter gardens and sliding systems – one team from survey to installation.',
-      foot_links: 'Links', foot_follow: 'Follow us', foot_rights: 'All rights reserved.', foot_top: 'Back to top',
+      foot_links: 'Links', foot_follow: 'Follow us', foot_rights: 'All rights reserved.', foot_top: 'Back to top', country: 'Turkey',
       area: 'm²', specs_title: 'Specifications', modal_calc: 'Calculate price for this product', modal_wa: 'Ask on WhatsApp'
     }
   };
