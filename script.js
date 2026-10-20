@@ -59,6 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
       chat_title: 'Meteor Canlı Destek', chat_subtitle: 'AI Asistan · Çevrimiçi', chat_badge: 'Canlı Destek',
       chat_welcome: "Merhaba! Meteor Panorama'ya hoş geldiniz. Cam balkon, giyotin cam, kış bahçesi ve sürme sistemlerimiz hakkında her şeyi bana sorabilirsiniz. Size nasıl yardımcı olabilirim?",
       chat_placeholder: 'Bir soru yazın...', chat_quick_title: 'Hızlı Sorular:',
+      chat_status_waiting: 'Meteor AI yanıt hazırlıyor...',
       chat_q1: 'Ürünleriniz nelerdir?', chat_q2: 'Keşif ve ölçü ücretsiz mi?', chat_q3: 'Fiyat nasıl hesaplanır?',
       chat_q4: 'Hangi bölgelere teslimat yapıyorsunuz?', chat_q5: 'Yetkiliye bağlan / Teklif iste',
       chat_rep_title: 'Uzman Ekip İletişim Talebi', chat_rep_name: 'Adınız Soyadınız', chat_rep_phone: 'Telefon Numaranız',
@@ -116,6 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
       chat_title: 'Meteor Live-Chat', chat_subtitle: 'KI-Assistent · Online', chat_badge: 'Live-Chat',
       chat_welcome: "Hallo! Willkommen bei Meteor Panorama. Fragen Sie mich gerne alles zu Balkonverglasung, Guillotine-Glas, Wintergärten und Schiebesystemen. Wie kann ich Ihnen helfen?",
       chat_placeholder: 'Schreiben Sie eine Frage...', chat_quick_title: 'Häufige Fragen:',
+      chat_status_waiting: 'Meteor AI bereitet eine Antwort vor...',
       chat_q1: 'Welche Produkte bieten Sie an?', chat_q2: 'Ist das Aufmaß kostenlos?', chat_q3: 'Wie wird der Preis berechnet?',
       chat_q4: 'Wohin liefern Sie?', chat_q5: 'Berater kontaktieren / Angebot',
       chat_rep_title: 'Kontaktanfrage Fachberater', chat_rep_name: 'Ihr Name', chat_rep_phone: 'Ihre Telefonnummer',
@@ -173,6 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
       chat_title: 'Meteor Live Chat', chat_subtitle: 'AI Assistant · Online', chat_badge: 'Live Chat',
       chat_welcome: "Hello! Welcome to Meteor Panorama. Feel free to ask me anything about balcony glazing, guillotine glass, winter gardens and sliding systems. How can I help you today?",
       chat_placeholder: 'Type a question...', chat_quick_title: 'Quick Questions:',
+      chat_status_waiting: 'Meteor AI is preparing an answer...',
       chat_q1: 'What are your products?', chat_q2: 'Is the site survey free?', chat_q3: 'How is price calculated?',
       chat_q4: 'Where do you deliver?', chat_q5: 'Contact specialist / Get quote',
       chat_rep_title: 'Specialist Contact Request', chat_rep_name: 'Your Full Name', chat_rep_phone: 'Your Phone Number',
@@ -434,7 +437,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const OPENROUTER_CONFIG = {
     apiKey: atob('c2stb3ItdjEtNGJmOGJkMTk3YjQ1MzQ4YTY2NjZmNWJkOGI3OWY4ZWQxMzU1MzNhNGVkN2VlYTIwNjlmODg0NzBjYWRmNDQ2OQ=='),
     endpoint: 'https://openrouter.ai/api/v1/chat/completions',
-    model: 'openrouter/free'
+    // 1. Minimax Flash (çok hızlı, akıllı, temiz Türkçe/Almanca/İngilizce)
+    // 2. Gemma 4 (ikincil güçlü fallback)
+    // 3. openrouter/free (genel fallback)
+    models: [
+      'minimax/minimax-m3.1-flash:free',
+      'google/gemma-4-26b-a4b-it:free',
+      'openrouter/free'
+    ]
   };
 
   // Telegram Bot Entegrasyonu:
@@ -452,6 +462,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const chatReset = $('#chatReset');
   const chatForm = $('#chatForm');
   const chatInput = $('#chatInput');
+  const chatSendBtn = $('#chatSendBtn');
+  const chatStatusBar = $('#chatStatusBar');
+  const chatStatusText = $('#chatStatusText');
   const chatMessages = $('#chatMessages');
   const chatQuickArea = $('#chatQuickArea');
   const chatBody = $('#chatBody');
@@ -459,6 +472,54 @@ document.addEventListener('DOMContentLoaded', () => {
   let chatHistory = [];
   let isChatBusy = false;
   let chatInitialized = false;
+
+  function cleanBotReply(text, cLang) {
+    if (!text) return '';
+    let cleaned = text
+      .replace(/<think>[\s\S]*?<\/think>/gi, '')
+      .replace(/(?:user\s*safety|response\s*safety|safety\s*assessment|content\s*safety|safety)\s*:\s*(?:safe|unsafe|[^\n\r]+)/gi, '')
+      .replace(/(?:safety check passed|safety evaluation:)/gi, '')
+      .trim();
+
+    if (!cleaned || cleaned.length < 2) {
+      if (cLang === 'de') {
+        return 'Gern geschehen! Wie kann ich Ihnen bei Balkonverglasung, Guillotine-Glas oder Wintergärten weiterhelfen?';
+      } else if (cLang === 'en') {
+        return "You're welcome! How else can I assist you regarding our balcony glazing, guillotine glass or winter garden systems?";
+      } else {
+        return 'Rica ederim! Isıcamlı cam balkon, giyotin cam veya kış bahçesi sistemlerimizle ilgili başka nasıl yardımcı olabilirim?';
+      }
+    }
+    return cleaned;
+  }
+
+  function setWaitingState(isWaiting) {
+    if (chatStatusBar) {
+      chatStatusBar.hidden = !isWaiting;
+      if (chatStatusText) chatStatusText.textContent = tr('chat_status_waiting');
+    }
+    if (chatForm) {
+      if (isWaiting) chatForm.classList.add('is-busy');
+      else chatForm.classList.remove('is-busy');
+    }
+    if (chatInput) {
+      chatInput.disabled = isWaiting;
+      if (isWaiting) {
+        if (!chatInput.getAttribute('data-orig-ph')) {
+          chatInput.setAttribute('data-orig-ph', chatInput.placeholder || tr('chat_placeholder'));
+        }
+        chatInput.placeholder = tr('chat_status_waiting');
+      } else {
+        const orig = chatInput.getAttribute('data-orig-ph') || tr('chat_placeholder');
+        chatInput.placeholder = orig;
+        setTimeout(() => chatInput.focus(), 80);
+      }
+    }
+    if (chatSendBtn) {
+      chatSendBtn.disabled = isWaiting;
+      chatSendBtn.setAttribute('aria-busy', String(isWaiting));
+    }
+  }
 
   function getSystemPrompt(cLang) {
     const langNames = { tr: 'Türkçe', de: 'Almanca (Deutsch)', en: 'İngilizce (English)' };
@@ -484,6 +545,9 @@ document.addEventListener('DOMContentLoaded', () => {
       "- Yaklaşık m² başlangıç fiyatları: Isıcamlı Cam Balkon ~3.400 ₺ (140 €), Motorlu Giyotin ~6.400 ₺ (280 €), Kış Bahçesi ~10.500 ₺ (460 €), Sürme Sistem ~3.800 ₺ (160 €) seviyesindedir.\n" +
       "- Kesin net maliyetin alanın şekline, ölçülerine ve cam tipine göre yerinde ücretsiz ölçü alındıktan sonra netleşeceğini söyle.\n" +
       "- Müşteri kesin fiyat, randevu veya keşif talep ederse: 'Yetkili uzmanımızın sizinle iletişime geçmesi için adınızı ve telefon numaranızı belirtebilir veya WhatsApp\'tan yazabilirsiniz.' şeklinde yönlendir.\n\n" +
+      "GÜVENLİK VE FORMAT KURALI (KESİNLİKLE UYULACAK):\n" +
+      "- ASLA 'User Safety: safe', 'Response Safety: safe', 'Safety: safe' veya sistem güvenlik etiketleri yazma!\n" +
+      "- Yalnızca doğrudan müşteriye hitap eden doğal, nazik ve bilgilendirici cümleler kur.\n\n" +
       "ÜSLUP:\n" +
       "- Kısa, samimi, güven veren, net ve profesyonel cevaplar ver. Asla gereksiz destanlar yazma, mobil cihazlarda kolay okunacak paragraflar kullan.";
   }
@@ -562,17 +626,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function showTyping() {
     if (!chatMessages) return;
+    const existing = document.getElementById('chatTypingIndicator');
+    if (existing) existing.remove();
+
     const el = document.createElement('div');
     el.className = 'chat-msg chat-msg-bot';
     el.id = 'chatTypingIndicator';
-    el.innerHTML = '<div class="chat-typing"><span></span><span></span><span></span></div>';
+    el.innerHTML =
+      '<div class="chat-typing-bubble">' +
+        '<div class="chat-typing-badge">' +
+          '<span class="chat-typing-radar"></span>' +
+          '<span>' + tr('chat_status_waiting') + '</span>' +
+        '</div>' +
+        '<div class="chat-typing-dots"><span></span><span></span><span></span></div>' +
+      '</div>';
     chatMessages.appendChild(el);
+    setWaitingState(true);
     scrollChatBottom();
   }
 
   function removeTyping() {
-    const el = $('#chatTypingIndicator');
+    const el = document.getElementById('chatTypingIndicator');
     if (el) el.remove();
+    setWaitingState(false);
   }
 
   function scrollChatBottom() {
@@ -653,6 +729,48 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  async function callOpenRouterAI(messagesPayload) {
+    const models = OPENROUTER_CONFIG.models;
+    let lastErr = null;
+
+    for (const modelName of models) {
+      try {
+        const res = await fetch(OPENROUTER_CONFIG.endpoint, {
+          method: 'POST',
+          headers: {
+            'Authorization': 'Bearer ' + OPENROUTER_CONFIG.apiKey,
+            'Content-Type': 'application/json',
+            'HTTP-Referer': window.location.origin || 'http://localhost:3000',
+            'X-Title': 'Meteor Panorama AI Live Chat'
+          },
+          body: JSON.stringify({
+            model: modelName,
+            messages: messagesPayload,
+            temperature: 0.6,
+            max_tokens: 650
+          })
+        });
+
+        if (!res.ok) {
+          lastErr = new Error('Model ' + modelName + ' HTTP ' + res.status);
+          continue;
+        }
+
+        const data = await res.json();
+        const content = data.choices && data.choices[0] && data.choices[0].message
+          ? data.choices[0].message.content
+          : '';
+
+        if (content && content.trim()) {
+          return cleanBotReply(content, lang);
+        }
+      } catch (e) {
+        lastErr = e;
+      }
+    }
+    throw (lastErr || new Error('All AI models failed'));
+  }
+
   async function handleUserMessage(userText) {
     if (!userText || isChatBusy) return;
     isChatBusy = true;
@@ -671,33 +789,11 @@ document.addEventListener('DOMContentLoaded', () => {
         ...chatHistory
       ];
 
-      const res = await fetch(OPENROUTER_CONFIG.endpoint, {
-        method: 'POST',
-        headers: {
-          'Authorization': 'Bearer ' + OPENROUTER_CONFIG.apiKey,
-          'Content-Type': 'application/json',
-          'HTTP-Referer': window.location.origin || 'http://localhost:3000',
-          'X-Title': 'Meteor Panorama AI Live Chat'
-        },
-        body: JSON.stringify({
-          model: OPENROUTER_CONFIG.model,
-          messages: messagesPayload
-        })
-      });
-
+      const botReply = await callOpenRouterAI(messagesPayload);
       removeTyping();
 
-      if (!res.ok) {
-        throw new Error('API status: ' + res.status);
-      }
-
-      const data = await res.json();
-      const botReply = data.choices && data.choices[0] && data.choices[0].message
-        ? data.choices[0].message.content.trim()
-        : '';
-
       if (!botReply) {
-        throw new Error('Empty response');
+        throw new Error('Empty sanitized reply');
       }
 
       chatHistory.push({ role: 'assistant', content: botReply });
