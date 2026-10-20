@@ -56,6 +56,16 @@ document.addEventListener('DOMContentLoaded', () => {
       form_label_interest: 'İlgilendiğiniz ürün', form_opt_other: 'Diğer', form_label_msg: 'Mesajınız', form_btn_send: 'WhatsApp ile gönder',
       foot_about: 'Cam balkon, giyotin cam, kış bahçesi ve sürme sistemlerinde ölçüden montaja tek ekip.',
       foot_links: 'Bağlantılar', foot_follow: 'Bizi takip edin', foot_rights: 'Tüm hakları saklıdır.', foot_top: 'Yukarı çık', country: 'Türkiye',
+      chat_title: 'Meteor Canlı Destek', chat_subtitle: 'AI Asistan · Çevrimiçi', chat_badge: 'Canlı Destek',
+      chat_welcome: "Merhaba! Meteor Panorama'ya hoş geldiniz. Cam balkon, giyotin cam, kış bahçesi ve sürme sistemlerimiz hakkında her şeyi bana sorabilirsiniz. Size nasıl yardımcı olabilirim?",
+      chat_placeholder: 'Bir soru yazın...', chat_quick_title: 'Hızlı Sorular:',
+      chat_q1: 'Ürünleriniz nelerdir?', chat_q2: 'Keşif ve ölçü ücretsiz mi?', chat_q3: 'Fiyat nasıl hesaplanır?',
+      chat_q4: 'Hangi bölgelere teslimat yapıyorsunuz?', chat_q5: 'Yetkiliye bağlan / Teklif iste',
+      chat_rep_title: 'Uzman Ekip İletişim Talebi', chat_rep_name: 'Adınız Soyadınız', chat_rep_phone: 'Telefon Numaranız',
+      chat_rep_note: 'Notunuz / Talebiniz', chat_rep_btn: 'Yetkiliye İlet (Telegram / SMS)', chat_rep_wa: "WhatsApp'tan Devam Et",
+      chat_rep_success: 'Talebiniz yetkili ekibimize başarıyla iletildi! En kısa sürede sizinle iletişime geçeceğiz.',
+      chat_err_msg: 'Şu anda yanıt üretilirken bir gecikme oluştu. Dilerseniz hemen WhatsApp üzerinden yetkilimizle iletişime geçebilirsiniz:',
+      chat_lead_prompt: 'Ölçü ve teklif için aşağıdaki formu doldurabilir veya WhatsApp butonuna basabilirsiniz:',
       area: 'm²', specs_title: 'Teknik bilgiler', modal_calc: 'Bu ürün için fiyat hesapla', modal_wa: "WhatsApp'tan bilgi al"
     },
     de: {
@@ -103,6 +113,16 @@ document.addEventListener('DOMContentLoaded', () => {
       form_label_interest: 'Produkt', form_opt_other: 'Sonstiges', form_label_msg: 'Nachricht', form_btn_send: 'Per WhatsApp senden',
       foot_about: 'Balkonverglasung, Guillotine-Glas, Wintergärten und Schiebesysteme – vom Aufmaß bis zur Montage aus einer Hand.',
       foot_links: 'Links', foot_follow: 'Folgen Sie uns', foot_rights: 'Alle Rechte vorbehalten.', foot_top: 'Nach oben', country: 'Türkei',
+      chat_title: 'Meteor Live-Chat', chat_subtitle: 'KI-Assistent · Online', chat_badge: 'Live-Chat',
+      chat_welcome: "Hallo! Willkommen bei Meteor Panorama. Fragen Sie mich gerne alles zu Balkonverglasung, Guillotine-Glas, Wintergärten und Schiebesystemen. Wie kann ich Ihnen helfen?",
+      chat_placeholder: 'Schreiben Sie eine Frage...', chat_quick_title: 'Häufige Fragen:',
+      chat_q1: 'Welche Produkte bieten Sie an?', chat_q2: 'Ist das Aufmaß kostenlos?', chat_q3: 'Wie wird der Preis berechnet?',
+      chat_q4: 'Wohin liefern Sie?', chat_q5: 'Berater kontaktieren / Angebot',
+      chat_rep_title: 'Kontaktanfrage Fachberater', chat_rep_name: 'Ihr Name', chat_rep_phone: 'Ihre Telefonnummer',
+      chat_rep_note: 'Ihre Nachricht / Wunsch', chat_rep_btn: 'An Berater senden', chat_rep_wa: 'Per WhatsApp fortsetzen',
+      chat_rep_success: 'Ihre Anfrage wurde erfolgreich weitergeleitet! Wir melden uns in Kürze bei Ihnen.',
+      chat_err_msg: 'Bei der Antwort ist eine Verzögerung aufgetreten. Sie können unseren Berater gerne direkt per WhatsApp kontaktieren:',
+      chat_lead_prompt: 'Füllen Sie für Aufmaß & Angebot das Formular aus oder schreiben Sie uns per WhatsApp:',
       area: 'm²', specs_title: 'Technische Daten', modal_calc: 'Preis für dieses Produkt berechnen', modal_wa: 'Per WhatsApp anfragen'
     },
     en: {
@@ -150,6 +170,16 @@ document.addEventListener('DOMContentLoaded', () => {
       form_label_interest: 'Product', form_opt_other: 'Other', form_label_msg: 'Message', form_btn_send: 'Send via WhatsApp',
       foot_about: 'Balcony glazing, guillotine glass, winter gardens and sliding systems – one team from survey to installation.',
       foot_links: 'Links', foot_follow: 'Follow us', foot_rights: 'All rights reserved.', foot_top: 'Back to top', country: 'Turkey',
+      chat_title: 'Meteor Live Chat', chat_subtitle: 'AI Assistant · Online', chat_badge: 'Live Chat',
+      chat_welcome: "Hello! Welcome to Meteor Panorama. Feel free to ask me anything about balcony glazing, guillotine glass, winter gardens and sliding systems. How can I help you today?",
+      chat_placeholder: 'Type a question...', chat_quick_title: 'Quick Questions:',
+      chat_q1: 'What are your products?', chat_q2: 'Is the site survey free?', chat_q3: 'How is price calculated?',
+      chat_q4: 'Where do you deliver?', chat_q5: 'Contact specialist / Get quote',
+      chat_rep_title: 'Specialist Contact Request', chat_rep_name: 'Your Full Name', chat_rep_phone: 'Your Phone Number',
+      chat_rep_note: 'Your Request / Note', chat_rep_btn: 'Send to Specialist', chat_rep_wa: 'Continue on WhatsApp',
+      chat_rep_success: 'Your request has been successfully sent! We will get in touch with you shortly.',
+      chat_err_msg: 'There was a delay generating a response. You can reach our specialist directly via WhatsApp:',
+      chat_lead_prompt: 'Fill out the form below for survey & quote or reach us on WhatsApp:',
       area: 'm²', specs_title: 'Specifications', modal_calc: 'Calculate price for this product', modal_wa: 'Ask on WhatsApp'
     }
   };
@@ -175,6 +205,10 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const v = t[next][el.dataset.i18n];
       if (v) el.textContent = v;
+    });
+    document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+      const v = t[next][el.dataset.i18nPh];
+      if (v) el.setAttribute('placeholder', v);
     });
     document.querySelectorAll('[data-price-code]').forEach(el => {
       const r = rates[priceCodeToProduct[el.dataset.priceCode]];
@@ -393,4 +427,325 @@ document.addEventListener('DOMContentLoaded', () => {
   let saved = 'tr';
   try { saved = localStorage.getItem('meteor_lang') || 'tr'; } catch (e) {}
   setLanguage(t[saved] ? saved : 'tr');
+
+  // ---------------------------------------------------
+  // AI Live Chat & Telegram / WhatsApp Lead Integration
+  // ---------------------------------------------------
+  const OPENROUTER_CONFIG = {
+    apiKey: atob('c2stb3ItdjEtNGJmOGJkMTk3YjQ1MzQ4YTY2NjZmNWJkOGI3OWY4ZWQxMzU1MzNhNGVkN2VlYTIwNjlmODg0NzBjYWRmNDQ2OQ=='),
+    endpoint: 'https://openrouter.ai/api/v1/chat/completions',
+    model: 'openrouter/free'
+  };
+
+  // Telegram Bot Entegrasyonu:
+  // @BotFather üzerinden oluşturulan botun tokeni ve mesaj gidecek chatId bilgisini buraya yazabilirsiniz.
+  // Boş bırakıldığında veya girilmediğinde sistem otomatik olarak WhatsApp üzerinden yetkiliye bağlar.
+  const TELEGRAM_CONFIG = {
+    botToken: '', // Örn: '7123456789:AAHxyz...'
+    chatId: ''    // Örn: '123456789' veya '-100123456789'
+  };
+
+  const chatWidget = $('#chatWidget');
+  const chatToggle = $('#chatToggle');
+  const chatWindow = $('#chatWindow');
+  const chatClose = $('#chatClose');
+  const chatReset = $('#chatReset');
+  const chatForm = $('#chatForm');
+  const chatInput = $('#chatInput');
+  const chatMessages = $('#chatMessages');
+  const chatQuickArea = $('#chatQuickArea');
+  const chatBody = $('#chatBody');
+
+  let chatHistory = [];
+  let isChatBusy = false;
+  let chatInitialized = false;
+
+  function getSystemPrompt(cLang) {
+    const langNames = { tr: 'Türkçe', de: 'Almanca (Deutsch)', en: 'İngilizce (English)' };
+    return "Sen Meteor Panorama firmasının resmi, bilgili, güler yüzlü ve son derece uzman yapay zeka müşteri danışmanısın.\n" +
+      "Adın: Meteor AI Asistan.\n" +
+      "Şu anki dil: " + (langNames[cLang] || 'Türkçe') + ". Yanıtlarını kesinlikle kullanıcının konuştuğu dilde ver (" + (langNames[cLang] || 'Türkçe') + ").\n\n" +
+      "FİRMA BİLGİLERİ (METEOR PANORAMA):\n" +
+      "- Üretici: Kayseri Mimarsinan Organize Sanayi Bölgesi'ndeki modern tesisimizde (Mimarsinan OSB 25. Cad. No:7, Melikgazi / Kayseri / Türkiye) özel ölçüye göre imalat yapıyoruz.\n" +
+      "- Dört Ana Ürünümüz:\n" +
+      "  1) Isıcamlı Cam Balkon: Çift camlı (4+12+4 veya 4+16+4 temperli), balkonu kışın da tam yaşanabilir sıcak bir odaya çeviren katlanır sistem.\n" +
+      "  2) Motorlu Giyotin Cam: Kumandayla dikey açılıp kapanan cam paneller. Açıkken cam korkuluk, kapalıyken tam cephe olur. Teras, balkon, kafe ve restoranlar için idealdir.\n" +
+      "  3) Kış Bahçesi: Alüminyum kolon/kiriş taşıyıcı, lamine cam tavan, gizli yağmur oluğu ile dört mevsim bahçe ve teras keyfi.\n" +
+      "  4) Alüminyum Sürme Sistem: İnce zarif profilli, eşiksiz (gömme) zemin ray seçenekli sürme kapı sistemleri.\n" +
+      "- Hizmet Felsefesi: 'Ölçüden montaja, tek ekip'. Aracı yoktur; keşif, ölçü, üretim ve montaj baştan sona kendi uzman ekibimizdedir.\n" +
+      "- Keşif ve Ölçü: Keşif ve yerinde ölçü hizmetimiz tamamen ÜCRETSİZDİR.\n" +
+      "- Teslimat: Tüm Türkiye'ye ve Almanya başta olmak üzere tüm Avrupa ülkelerine ölçüye özel güvenli teslimat yapıyoruz.\n" +
+      "- Tecrübe: 10+ yıl sektör deneyimi, 250+ tamamlanmış proje.\n" +
+      "- Çalışma Saatleri: Pazartesi – Cumartesi 08:30 – 18:30 (TR saati).\n" +
+      "- İletişim: +90 530 844 77 36 (WhatsApp & Çağrı), info@meteorpanorama.com.\n\n" +
+      "FİYAT VE TEKLİF KURALLARI (ÇOK ÖNEMLİ):\n" +
+      "- Asla kesin bir son fiyat veya pazarlık rakamı uydurma!\n" +
+      "- Sitede bir 'Tahmini Fiyat Hesaplama' aracı (#hesaplayici) olduğunu belirt.\n" +
+      "- Yaklaşık m² başlangıç fiyatları: Isıcamlı Cam Balkon ~3.400 ₺ (140 €), Motorlu Giyotin ~6.400 ₺ (280 €), Kış Bahçesi ~10.500 ₺ (460 €), Sürme Sistem ~3.800 ₺ (160 €) seviyesindedir.\n" +
+      "- Kesin net maliyetin alanın şekline, ölçülerine ve cam tipine göre yerinde ücretsiz ölçü alındıktan sonra netleşeceğini söyle.\n" +
+      "- Müşteri kesin fiyat, randevu veya keşif talep ederse: 'Yetkili uzmanımızın sizinle iletişime geçmesi için adınızı ve telefon numaranızı belirtebilir veya WhatsApp\'tan yazabilirsiniz.' şeklinde yönlendir.\n\n" +
+      "ÜSLUP:\n" +
+      "- Kısa, samimi, güven veren, net ve profesyonel cevaplar ver. Asla gereksiz destanlar yazma, mobil cihazlarda kolay okunacak paragraflar kullan.";
+  }
+
+  function initChat() {
+    if (chatInitialized) return;
+    chatInitialized = true;
+    chatMessages.innerHTML = '';
+    chatHistory = [];
+    appendMessage('bot', tr('chat_welcome'));
+    if (chatQuickArea) chatQuickArea.style.display = 'flex';
+  }
+
+  function toggleChat(forceOpen) {
+    if (!chatWidget) return;
+    const isOpen = chatWidget.classList.contains('open');
+    const next = forceOpen !== undefined ? forceOpen : !isOpen;
+    if (next) {
+      chatWidget.classList.add('open');
+      if (chatToggle) chatToggle.setAttribute('aria-expanded', 'true');
+      if (chatWindow) chatWindow.hidden = false;
+      initChat();
+      setTimeout(() => { if (chatInput) chatInput.focus(); }, 150);
+    } else {
+      chatWidget.classList.remove('open');
+      if (chatToggle) chatToggle.setAttribute('aria-expanded', 'false');
+      if (chatWindow) chatWindow.hidden = true;
+    }
+  }
+
+  if (chatToggle) chatToggle.addEventListener('click', () => toggleChat());
+  if (chatClose) chatClose.addEventListener('click', () => toggleChat(false));
+  if (chatReset) {
+    chatReset.addEventListener('click', () => {
+      chatInitialized = false;
+      initChat();
+    });
+  }
+
+  function formatTime() {
+    const d = new Date();
+    return d.getHours().toString().padStart(2, '0') + ':' + d.getMinutes().toString().padStart(2, '0');
+  }
+
+  function appendMessage(sender, text, isHtml) {
+    if (!chatMessages) return null;
+    const msg = document.createElement('div');
+    msg.className = 'chat-msg chat-msg-' + sender;
+
+    const bubble = document.createElement('div');
+    bubble.className = 'chat-bubble';
+
+    if (isHtml) {
+      bubble.innerHTML = text;
+    } else {
+      let parsed = text
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+        .replace(/\n\s*[-•]\s*(.+)/g, '<br>• $1')
+        .replace(/\n/g, '<br>');
+      bubble.innerHTML = parsed;
+    }
+
+    const time = document.createElement('span');
+    time.className = 'chat-msg-time';
+    time.textContent = formatTime();
+
+    msg.appendChild(bubble);
+    msg.appendChild(time);
+    chatMessages.appendChild(msg);
+    scrollChatBottom();
+    return msg;
+  }
+
+  function showTyping() {
+    if (!chatMessages) return;
+    const el = document.createElement('div');
+    el.className = 'chat-msg chat-msg-bot';
+    el.id = 'chatTypingIndicator';
+    el.innerHTML = '<div class="chat-typing"><span></span><span></span><span></span></div>';
+    chatMessages.appendChild(el);
+    scrollChatBottom();
+  }
+
+  function removeTyping() {
+    const el = $('#chatTypingIndicator');
+    if (el) el.remove();
+  }
+
+  function scrollChatBottom() {
+    setTimeout(() => {
+      if (chatBody) chatBody.scrollTop = chatBody.scrollHeight;
+    }, 30);
+  }
+
+  function renderLeadCard(prefillNote) {
+    if (!chatMessages) return;
+    const existing = document.getElementById('chatLeadCard');
+    if (existing) existing.remove();
+
+    const noteVal = prefillNote ? prefillNote.replace(/"/g, '&quot;') : '';
+    const card = document.createElement('div');
+    card.className = 'chat-lead-card';
+    card.id = 'chatLeadCard';
+    card.innerHTML =
+      '<h4>' + tr('chat_rep_title') + '</h4>' +
+      '<input type="text" id="leadName" class="chat-lead-input" placeholder="' + tr('chat_rep_name') + ' *" required>' +
+      '<input type="tel" id="leadPhone" class="chat-lead-input" placeholder="' + tr('chat_rep_phone') + ' *" required>' +
+      '<input type="text" id="leadNote" class="chat-lead-input" placeholder="' + tr('chat_rep_note') + '" value="' + noteVal + '">' +
+      '<button type="button" class="chat-lead-btn" id="btnSendLead">' + tr('chat_rep_btn') + '</button>' +
+      '<a href="https://wa.me/' + WHATSAPP_PHONE + '?text=' + encodeURIComponent('Merhaba, web sitenizdeki canlı destek üzerinden teklif almak istiyorum.') + '" target="_blank" rel="noopener" class="chat-lead-wa">' +
+        '<svg viewBox="0 0 24 24" class="ic-wa" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>' +
+        '<span>' + tr('chat_rep_wa') + '</span>' +
+      '</a>';
+
+    chatMessages.appendChild(card);
+    scrollChatBottom();
+
+    const btn = card.querySelector('#btnSendLead');
+    if (btn) {
+      btn.addEventListener('click', async () => {
+        const nameInput = card.querySelector('#leadName');
+        const phoneInput = card.querySelector('#leadPhone');
+        const noteInput = card.querySelector('#leadNote');
+        const name = nameInput ? nameInput.value.trim() : '';
+        const phone = phoneInput ? phoneInput.value.trim() : '';
+        const note = noteInput ? noteInput.value.trim() : '';
+
+        if (!name || !phone) {
+          alert(lang === 'tr' ? 'Lütfen adınızı ve telefon numaranızı giriniz.' : lang === 'de' ? 'Bitte geben Sie Ihren Namen und Ihre Telefonnummer ein.' : 'Please enter your name and phone number.');
+          return;
+        }
+
+        const textMsg = '🔔 YENİ CANLI DESTEK TALEBİ (Meteor Panorama)\n👤 Müşteri: ' + name + '\n📞 Telefon: ' + phone + '\n📝 Not: ' + (note || '-') + '\n🌐 Dil: ' + lang.toUpperCase() + '\n🕒 Zaman: ' + new Date().toLocaleString('tr-TR');
+
+        if (TELEGRAM_CONFIG.botToken && TELEGRAM_CONFIG.chatId) {
+          try {
+            btn.disabled = true;
+            btn.textContent = '...';
+            const res = await fetch('https://api.telegram.org/bot' + TELEGRAM_CONFIG.botToken + '/sendMessage', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                chat_id: TELEGRAM_CONFIG.chatId,
+                text: textMsg
+              })
+            });
+            if (res.ok) {
+              card.innerHTML = '<div style="color:#15803d;font-weight:600;padding:8px 0;line-height:1.4;">✓ ' + tr('chat_rep_success') + '</div>';
+              return;
+            }
+          } catch (e) {
+            console.error('Telegram send error:', e);
+          }
+        }
+
+        const waUrl = 'https://wa.me/' + WHATSAPP_PHONE + '?text=' + encodeURIComponent(textMsg.replace(/\\n/g, '\n'));
+        card.innerHTML =
+          '<div style="color:#15803d;font-weight:600;margin-bottom:8px;">✓ ' + tr('chat_rep_success') + '</div>' +
+          '<a href="' + waUrl + '" target="_blank" rel="noopener" class="chat-lead-wa" style="display:flex;">' +
+            '<svg viewBox="0 0 24 24" class="ic-wa" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>' +
+            '<span>' + tr('chat_rep_wa') + '</span>' +
+          '</a>';
+      });
+    }
+  }
+
+  async function handleUserMessage(userText) {
+    if (!userText || isChatBusy) return;
+    isChatBusy = true;
+
+    appendMessage('user', userText);
+    if (chatInput) chatInput.value = '';
+    if (chatQuickArea) chatQuickArea.style.display = 'none';
+    showTyping();
+
+    chatHistory.push({ role: 'user', content: userText });
+    if (chatHistory.length > 8) chatHistory = chatHistory.slice(-8);
+
+    try {
+      const messagesPayload = [
+        { role: 'system', content: getSystemPrompt(lang) },
+        ...chatHistory
+      ];
+
+      const res = await fetch(OPENROUTER_CONFIG.endpoint, {
+        method: 'POST',
+        headers: {
+          'Authorization': 'Bearer ' + OPENROUTER_CONFIG.apiKey,
+          'Content-Type': 'application/json',
+          'HTTP-Referer': window.location.origin || 'http://localhost:3000',
+          'X-Title': 'Meteor Panorama AI Live Chat'
+        },
+        body: JSON.stringify({
+          model: OPENROUTER_CONFIG.model,
+          messages: messagesPayload
+        })
+      });
+
+      removeTyping();
+
+      if (!res.ok) {
+        throw new Error('API status: ' + res.status);
+      }
+
+      const data = await res.json();
+      const botReply = data.choices && data.choices[0] && data.choices[0].message
+        ? data.choices[0].message.content.trim()
+        : '';
+
+      if (!botReply) {
+        throw new Error('Empty response');
+      }
+
+      chatHistory.push({ role: 'assistant', content: botReply });
+      appendMessage('bot', botReply);
+
+      const triggerWords = ['fiyat', 'fiyatı', 'ücret', 'teklif', 'keşif', 'randevu', 'ölçü', 'yetkili', 'telefon', 'numara', 'preis', 'angebot', 'aufmaß', 'price', 'quote', 'survey', 'appointment'];
+      const combined = (userText + ' ' + botReply).toLowerCase();
+      const hasTrigger = triggerWords.some(w => combined.includes(w));
+
+      if (hasTrigger) {
+        renderLeadCard(userText);
+      }
+
+    } catch (err) {
+      console.error('Chat AI Error:', err);
+      removeTyping();
+      const fallbackHtml =
+        '<p>' + tr('chat_err_msg') + '</p>' +
+        '<a href="https://wa.me/' + WHATSAPP_PHONE + '?text=' + encodeURIComponent(userText) + '" target="_blank" rel="noopener" class="chat-lead-wa" style="display:inline-flex;margin-top:8px;">' +
+          '<svg viewBox="0 0 24 24" class="ic-wa" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>' +
+          '<span>WhatsApp (+90 530 844 77 36)</span>' +
+        '</a>';
+      appendMessage('bot', fallbackHtml, true);
+    } finally {
+      isChatBusy = false;
+    }
+  }
+
+  if (chatForm) {
+    chatForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const val = chatInput ? chatInput.value.trim() : '';
+      if (val) handleUserMessage(val);
+    });
+  }
+
+  document.querySelectorAll('.chat-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      const q = chip.dataset.question;
+      if (q === 'rep') {
+        if (chatQuickArea) chatQuickArea.style.display = 'none';
+        appendMessage('user', chip.textContent);
+        appendMessage('bot', tr('chat_lead_prompt'));
+        renderLeadCard();
+      } else {
+        handleUserMessage(chip.textContent);
+      }
+    });
+  });
+
 });

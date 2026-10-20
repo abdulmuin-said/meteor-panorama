@@ -370,9 +370,87 @@
     </div>
   </footer>
 
+  <!-- WhatsApp Float Button (Left) -->
   <a href="https://wa.me/905308447736" target="_blank" rel="noopener" class="wa-float" aria-label="WhatsApp">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
   </a>
+
+  <!-- Live Chat Widget (Right) -->
+  <aside class="chat-widget" id="chatWidget" aria-label="Canlı Destek">
+    <!-- Chat Toggle Button -->
+    <button type="button" class="chat-toggle" id="chatToggle" aria-label="Canlı Destek" aria-expanded="false" aria-controls="chatWindow">
+      <span class="chat-toggle-badge" data-i18n="chat_badge">Canlı Destek</span>
+      <span class="chat-toggle-icon chat-icon-open">
+        <svg viewBox="0 0 24 24" class="ic" aria-hidden="true">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+          <circle cx="9" cy="10" r="1" fill="currentColor"></circle>
+          <circle cx="12" cy="10" r="1" fill="currentColor"></circle>
+          <circle cx="15" cy="10" r="1" fill="currentColor"></circle>
+        </svg>
+      </span>
+      <span class="chat-toggle-icon chat-icon-close">
+        <svg viewBox="0 0 24 24" class="ic" aria-hidden="true">
+          <path d="M18 6L6 18M6 6l12 12"></path>
+        </svg>
+      </span>
+    </button>
+
+    <!-- Chat Window -->
+    <div class="chat-window" id="chatWindow" role="dialog" aria-modal="false" aria-labelledby="chatTitle" hidden>
+      <div class="chat-header">
+        <div class="chat-header-info">
+          <div class="chat-avatar">
+            <svg viewBox="0 0 24 24" class="ic" aria-hidden="true">
+              <path d="M12 2a4 4 0 0 1 4 4v1h1a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3v-8a3 3 0 0 1 3-3h1V6a4 4 0 0 1 4-4z"></path>
+              <circle cx="9" cy="13" r="1.25" fill="currentColor"></circle>
+              <circle cx="15" cy="13" r="1.25" fill="currentColor"></circle>
+              <path d="M10 17h4"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="chat-title" id="chatTitle" data-i18n="chat_title">Meteor Canlı Destek</h3>
+            <span class="chat-status"><span class="chat-dot"></span><span data-i18n="chat_subtitle">AI Asistan · Çevrimiçi</span></span>
+          </div>
+        </div>
+        <div class="chat-header-actions">
+          <button type="button" class="chat-btn-icon" id="chatReset" title="Sohbeti Sıfırla" aria-label="Sohbeti Sıfırla">
+            <svg viewBox="0 0 24 24" class="ic" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 3v5h5"></path></svg>
+          </button>
+          <button type="button" class="chat-btn-icon" id="chatClose" title="Kapat" aria-label="Kapat">
+            <svg viewBox="0 0 24 24" class="ic" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"></path></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="chat-body" id="chatBody">
+        <div class="chat-messages" id="chatMessages">
+          <!-- Messages will be dynamically rendered here -->
+        </div>
+
+        <div class="chat-quick" id="chatQuickArea">
+          <span class="chat-quick-title" data-i18n="chat_quick_title">Hızlı Sorular:</span>
+          <div class="chat-chips" id="chatQuickChips">
+            <button type="button" class="chat-chip" data-question="q1" data-i18n="chat_q1">Ürünleriniz nelerdir?</button>
+            <button type="button" class="chat-chip" data-question="q2" data-i18n="chat_q2">Keşif ve ölçü ücretsiz mi?</button>
+            <button type="button" class="chat-chip" data-question="q3" data-i18n="chat_q3">Fiyat nasıl hesaplanır?</button>
+            <button type="button" class="chat-chip" data-question="q4" data-i18n="chat_q4">Hangi bölgelere teslimat yapıyorsunuz?</button>
+            <button type="button" class="chat-chip chat-chip-action" data-question="rep" data-i18n="chat_q5">Yetkiliye bağlan / Teklif iste</button>
+          </div>
+        </div>
+      </div>
+
+      <form class="chat-footer" id="chatForm">
+        <input type="text" id="chatInput" class="chat-input" placeholder="Bir soru yazın..." autocomplete="off" data-i18n-ph="chat_placeholder">
+        <button type="submit" class="chat-send" id="chatSendBtn" aria-label="Gönder">
+          <svg viewBox="0 0 24 24" class="ic" aria-hidden="true">
+            <path d="M22 2L11 13"></path>
+            <path d="M22 2l-7 20-4-9-9-4 20-7z"></path>
+          </svg>
+        </button>
+      </form>
+      <div class="chat-brand-note">Meteor AI Asistan · 7/24 Yanıtlar</div>
+    </div>
+  </aside>
 
   <div class="modal-backdrop" id="productModalBackdrop" aria-hidden="true">
     <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalProductTitle">
