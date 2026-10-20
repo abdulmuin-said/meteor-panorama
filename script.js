@@ -548,8 +548,9 @@ document.addEventListener('DOMContentLoaded', () => {
       "GÜVENLİK VE FORMAT KURALI (KESİNLİKLE UYULACAK):\n" +
       "- ASLA 'User Safety: safe', 'Response Safety: safe', 'Safety: safe' veya sistem güvenlik etiketleri yazma!\n" +
       "- Yalnızca doğrudan müşteriye hitap eden doğal, nazik ve bilgilendirici cümleler kur.\n\n" +
-      "ÜSLUP:\n" +
-      "- Kısa, samimi, güven veren, net ve profesyonel cevaplar ver. Asla gereksiz destanlar yazma, mobil cihazlarda kolay okunacak paragraflar kullan.";
+      "ÜSLUP VE UZUNLUK KURALI:\n" +
+      "- Kısa, öz, samimi, güven veren, net ve profesyonel cevaplar ver.\n" +
+      "- Cümlelerini DAİMA eksiksiz ve tam bitir, asla cümlenin ortasında veya yarım bırakma. 1-2 odaklı paragraf ile konuyu netleştir.";
   }
 
   function initChat() {
@@ -747,7 +748,7 @@ document.addEventListener('DOMContentLoaded', () => {
             model: modelName,
             messages: messagesPayload,
             temperature: 0.6,
-            max_tokens: 650
+            max_tokens: 1500
           })
         });
 
@@ -757,9 +758,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const data = await res.json();
-        const content = data.choices && data.choices[0] && data.choices[0].message
-          ? data.choices[0].message.content
-          : '';
+        const choice = data.choices && data.choices[0];
+        let content = choice && choice.message ? choice.message.content : '';
 
         if (content && content.trim()) {
           return cleanBotReply(content, lang);
